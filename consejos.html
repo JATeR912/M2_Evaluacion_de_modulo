@@ -173,7 +173,54 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p>Modal body text goes here.</p>
+            <form>
+              <!-- Pregunta de ejemplo -->
+              <div class="mb-3">
+                <label class="form-label fw-bold">1 - ¿Qué es un antivirus?</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="pais_pequeno" id="vaticano" value="vaticano" required>
+                  <label class="form-check-label" for="vaticano">
+                    Un software que protege contra programas maliciosos.
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="pais_pequeno" id="sanmarino" value="sanmarino">
+                  <label class="form-check-label" for="sanmarino">
+                    Una herramienta que hace que el internet sea más rápido.
+                  </label>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-bold">2 - ¿Qué es el phishing?</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="continente" id="asia" value="asia" required>
+                  <label class="form-check-label" for="asia">
+                    Un intento de engañar a las personas para que revelen información personal.
+                  </label>                
+                </div> 
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="continente" id="europa" value="europa">
+                  <label class="form-check-label" for="europa">
+                    Una forma de buscar información en internet.
+                  </label>
+                </div>             
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-bold">3 - ¿Qué es la autenticación de dos factores (2FA)?</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="lenguaje_programacion" id="python" value="python" required>
+                  <label class="form-check-label" for="python">
+                    Un lenguaje de programación utilizado para crear aplicaciones web.
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="lenguaje_programacion" id="java" value="java">
+                  <label class="form-check-label" for="java">
+                    Un método de seguridad que requiere dos formas de verificación.
+                  </label>
+                </div>
+              </div>
+            </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -192,6 +239,52 @@
             card.classList.toggle('flipped');
           });
         });
+   
+      document.querySelector('.btn-success').addEventListener('click', function() {
+        // Respuestas correctas
+        const correctAnswers = {
+          pais_pequeno: 'vaticano', // Pregunta 1
+          continente: 'asia',       // Pregunta 2
+          lenguaje_programacion: 'java' // Pregunta 3
+        };
+
+        let score = 0;
+        let feedback = '';
+
+        // Limpia resultados previos
+        const modalBody = document.querySelector('#modal .modal-body');
+        const oldResult = modalBody.querySelector('.alert');
+        if (oldResult) oldResult.remove();
+
+        // Verifica cada pregunta
+        Object.keys(correctAnswers).forEach(function(name, idx) {
+          const selected = document.querySelector(`input[name="${name}"]:checked`);
+          if (selected) {
+            if (selected.value === correctAnswers[name]) {
+              score++;
+              feedback += `<li>Pregunta ${idx+1}: <span class="text-success">Respuesta correcta</span></li>`;
+            } else {
+              feedback += `<li>Pregunta ${idx+1}: <span class="text-danger">Incorrecta</span>. Respuesta correcta: <b>${getAnswerText(name, correctAnswers[name])}</b></li>`;
+            }
+          } else {
+            feedback += `<li>Pregunta ${idx+1}: <span class="text-warning">Sin responder</span>. Respuesta correcta: <b>${getAnswerText(name, correctAnswers[name])}</b></li>`;
+          }
+        });
+
+        // Muestra el resultado en el modal
+        modalBody.innerHTML += `
+          <div class="alert alert-info mt-3">
+            <b>Respuestas correctas: ${score} de 3</b>
+            <ul>${feedback}</ul>
+          </div>
+        `;
+      });
+
+      // Función para obtener el texto de la respuesta correcta
+      function getAnswerText(name, value) {
+        const label = document.querySelector(`input[name="${name}"][value="${value}"]`).nextElementSibling;
+        return label ? label.textContent : '';
+      }
     </script>
   </body>
 </html>
