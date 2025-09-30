@@ -1,115 +1,199 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>CiberGuía</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand text-light fw-bold ms-2">CiberGuía</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse me-2" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a href=index.html class="nav-link text-light opacity-50" href="#index">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href=amenazas.html class="nav-link text-light opacity-50" href="#threats">Amenazas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href=consejos.html class="nav-link text-light opacity-50" href="#advice">Consejos</a>
-                        </li>  
-                    </ul>
-                </div>
-            </div> 
-        </nav>
-        <div id="consejos" class="container-fluid text-center p-5">
-            <h2 class="fw-bold">Consejos de Ciber Seguridad</h2>
-            <div class="container mt-4">
-              <div class="row justify-content-center">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>CiberGuía</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="assets/css/style.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light fw-bold ms-2">CiberGuía</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse me-2" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href=index.html class="nav-link text-light opacity-50" href="#index">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href=amenazas.html class="nav-link text-light opacity-50" href="#threats">Amenazas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href=consejos.html class="nav-link text-light opacity-50" href="#advice">Consejos</a>
+                    </li>  
+                </ul>
+            </div>
+        </div> 
+    </nav>
+    <div id="consejos" class="container-fluid text-center pt-5">
+      <h2 class="fw-bold">🛡️ Consejos de Ciber Seguridad</h2>
+      <p>Acercate a las tarjetas para ver el consejo</p>
+    </div>
+    <div class="container-fluid ">
+      <div class="container my-5">
+        <div class="row g-5 justify-content-center">
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
                   <h5>✅Utiliza contraseñas fuertes y únicas.</h5>
-                  <p>Utiliza contraseñas fuertes y únicas.</p>
+                </div>
+                <div class="flip-card-back">
+                  <p>Evita repetir tus contraseñas y utilizar palabras comunes o datos personales que puedan ser facilmente adivinados, añade numeros y simbolos a tus contraseñas si se permite.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
                   <h5>🕵Habilita la autenticación de dos factores.</h5>
-                  <p>Habilita la autenticación de dos factores.</p>
+                </div>
+                <div class="flip-card-back">
+                  <p>Activa esta opción en tus cuentas siempre que esté disponible. Añade una capa extra de seguridad que impide accesos no autorizados, incluso si alguien obtiene tu contraseña.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
                   <h5>⬆️Mantén tu software actualizado.</h5>
-                  <p>Mantén tu software actualizado.</p>
+                </div>
+                <div class="flip-card-back">
+                  <p>Actualiza frecuentemente tu sistema operativo, aplicaciones y antivirus. Las actualizaciones corrigen errores y cierran vulnerabilidades que los atacantes podrían aprovechar.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
                   <h5>❌No abrir URL desconocidas.</h5>
-                  <p>No abrir URL desconocidas.</p>
-                  <h5>👀Te cuidado con los emails sospechosos.</h5>
-                  <p>Ten cuidado con los emails sospechosos.</p>
+                </div>
+                <div class="flip-card-back">
+                  <p>No presiones enlaces desconocidos, de los cuales no estes seguro de la fuente.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <h5>👀Ten cuidado con los emails sospechosos.</h5>
+                </div>
+                <div class="flip-card-back">
+                  <p>Verifica el origen de los correos electrónicos y la forma de escritura, tambien considera que si el contexto del correo no corresponde a ti, no lo abras.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
                   <h5>🤫Evita compartir información personal en redes sociales.</h5>
-                  <p>Evita compartir información personal en redes sociales.</p>
+                </div>
+                <div class="flip-card-back">
+                  <p>No compartas tu información personal en redes sociales, no sabes quien esta viendo tus redes sociales, ni si tu informacion puede ser usada con propositos maliciosos.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
                   <h5>💾Realiza copias de seguridad regularmente.</h5>
-                  <p>Realiza copias de seguridad regularmente.</p>
+                </div>
+                <div class="flip-card-back">
+                  <p>Guarda copias de tus archivos importantes en discos externos o en la nube. Así puedes recuperarlos en caso de pérdida, robo o ataque.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
                   <h5>🔒Utiliza conexiones seguras (HTTPS).</h5>
-                  <p>Utiliza conexiones seguras (HTTPS).</p>
-              </div>
-            </div>
-        </div>
-        <div id="subscribe" class="container-fluid" >
-          <div class="header p-5 text-center">
-            <h4 class="fw-bold">¿Quieres saber más sobre Ciber Seguridad?</h4>
-            <h5 class="fw-bold">contacta con nosotros</h5>
-          </div>
-        </div>
-        <div class="container my-5">
-          <div class="row">
-            <form class="input-group w-50 mx-auto mb-5">
-              <div class="w-100 text-start" >
-                <label class="d-block pb-2">Nombre</label>
-                <input type="text" class="form-control pb-2" id="nombre" required>
-                <label class="d-block pb-2">Apellido</label>
-                <input type="text" class="form-control pb-2" id="apellido" required>
-                <label class="d-block pb-2">Correo electrónico</label>
-                <input class="form-control pb-2" type="email" placeholder="Ingresa tu correo" aria-label="Contactar" required>
-                <label for="contact-message" class="form-label">Mensaje</label>
-                <textarea id="contact-message" class="form-control" rows="4"></textarea>
-              </div>
-              <button class="btn btn-primary my-3 justify-content-center" type="submit">Contactar</button>
-            </form>
-          </div>
-        </div>
-        <div class="container text-center mt-5">
-            <h4 class="fw-bold">Prueba tus conocimientos sobre Ciber Seguridad</h4>
-            <button type="button" class="btn btn-primary m-5" data-toggle="modal" data-target="#modal">Realizar Prueba</button>
-        </div>
-        <div id="modal" class="modal" tabindex="-1">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Prueba tus conocimientos</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <p>Modal body text goes here.</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-success">Enviar respuestas</button>
+                </div>
+                <div class="flip-card-back">
+                  <p>Asegúrate de que las páginas web que visitas usen HTTPS. Esto protege la información que envías y recibes, especialmente en sitios donde ingresas contraseñas o datos bancarios.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <footer class="bg-dark text-light p-2">
-            <p class="text-center">Proyecto bootcamp Ciber Seguridad JATeR &copy; 2025</p>
-        </footer>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
-            $('button.modal').click(function (modal) {
-             $('.modal').modal()
-            });
-        </script>
-    </body>
+      </div>
+    </div>
+    <div id="subscribe" class="container-fluid" >
+      <div class="header p-5 text-center">
+        <h4 class="fw-bold">¿Quieres saber más sobre Ciber Seguridad?</h4>
+        <h5 class="fw-bold">contacta con nosotros</h5>
+      </div>
+    </div>
+    <div class="container my-5">
+      <div class="row">
+        <form class="input-group w-50 mx-auto mb-5">
+          <div class="w-100 text-start" >
+            <label class="d-block pb-2">Nombre</label>
+            <input type="text" class="form-control pb-2" id="nombre" required>
+            <label class="d-block pb-2">Apellido</label>
+            <input type="text" class="form-control pb-2" id="apellido" required>
+            <label class="d-block pb-2">Correo electrónico</label>
+            <input class="form-control pb-2" type="email" placeholder="Ingresa tu correo" aria-label="Contactar" required>
+            <label for="contact-message" class="form-label">Mensaje</label>
+            <textarea id="contact-message" class="form-control" rows="4"></textarea>
+          </div>
+          <button class="btn btn-primary my-3 justify-content-center rounded" type="submit">Contactar</button>
+        </form>
+      </div>
+    </div>
+    <div class="container text-center mt-5">
+        <h4 class="fw-bold">Prueba tus conocimientos sobre Ciber Seguridad</h4>
+        <button type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#modal">Realizar Prueba</button>
+    </div>
+    <div id="modal" class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Prueba tus conocimientos</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-success">Enviar respuestas</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer id="footer" class="bg-dark text-light p-2">
+        <p class="text-center">Proyecto bootcamp Ciber Seguridad JATeR &copy; 2025</p>
+    </footer>
+    <script>
+        const flipCards = document.querySelectorAll('.flip-card');
+        flipCards.forEach(card => {
+          card.addEventListener('click', () => {
+            card.classList.toggle('flipped');
+          });
+        });
+    </script>
+  </body>
 </html>
 
 
