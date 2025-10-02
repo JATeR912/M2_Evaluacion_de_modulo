@@ -1,61 +1,42 @@
-Contexto
+# 🛡️ CiberGuía – Sitio Web de Ciberseguridad
 
-    La ciberseguridad es un tema de gran importancia en la era digital, ya que permite proteger la información y la privacidad en línea. Para esta actividad, deberás desarrollar un sitio web informativo sobre ciberseguridad, en el que se expliquen conceptos clave, se brinden consejos de seguridad y se presenten ejemplos de ataques comunes y cómo prevenirlos.
+## Descripción
 
-    Este proyecto formará parte de tu portafolio, por lo que se evaluará tanto la funcionalidad como el diseño y la documentación del código.
+**CiberGuía** es un sitio web educativo e interactivo que informa sobre ciberseguridad, sus amenazas más comunes, consejos prácticos para protegerte en línea, y un breve test para evaluar tus conocimientos. Fue desarrollado como parte del bootcamp de Ciberseguridad **JATeR - 2025**.
 
-    Objetivo
 
-    Crear un sitio web responsivo e interactivo que informe sobre ciberseguridad, aplicando conocimientos en HTML, CSS, JavaScript, Bootstrap y jQuery, y gestionando el código con Git y GitHub.
 
-Instrucciones
+## Objetivos
 
-    1. Estructura del Proyecto
+- Informar sobre los principales riesgos de seguridad digital.
+- Promover buenas prácticas de protección online.
+- Evaluar conocimientos mediante una prueba interactiva.
+- Aplicar tecnologías web modernas como HTML5, CSS3, Bootstrap 5 y jQuery.
 
-        Deberás diseñar un sitio web de tres páginas con el siguiente contenido:
 
-        Inicio
 
-        Introducción a la ciberseguridad.
+## Estructura del Proyecto
 
-        Barra de navegación con enlaces a las demás secciones.
+### Páginas
 
-        Imagen destacada con un mensaje llamativo.
+- `index.html`: Introducción a la ciberseguridad.
+- `amenazas.html`: Amenazas comunes como phishing, malware, ransomware y DDoS.
+- `consejos.html`: Consejos de seguridad, formulario de contacto y test interactivo.
 
-        Amenazas Comunes
+### Contenido
 
-        Información sobre ataques cibernéticos como phishing, ransomware, malware y ataques DDoS.
+- **Navbar:** Navegación fluida entre secciones.
+- **Tarjetas y carruseles:** Visualización de amenazas y noticias reales.
+- **Flip-cards:** Consejos de seguridad interactivos.
+- **Formulario:** Sección de contacto validada.
+- **Modal Test:** Preguntas con evaluación automática de respuestas.
 
-        Uso de tarjetas o secciones interactivas para cada tipo de amenaza.
 
-        Un carrusel o acordeón con ejemplos de casos reales.
+## Tecnologías Utilizadas
 
-        Consejos de Seguridad
-
-        Lista de buenas prácticas para protegerse en línea.
-
-        Formulario de contacto para solicitar más información (con validación en JavaScript).
-
-        Un modal con un "test de seguridad" donde el usuario pueda responder preguntas básicas y recibir retroalimentación.
-
-    2. Diseño y Estilo
-
-        HTML5: Uso de etiquetas semánticas para estructurar correctamente el contenido.
-
-        CSS3 y Bootstrap: Implementación de estilos modernos y diseño responsivo con media queries.
-
-        jQuery: Uso de efectos interactivos como ocultar/mostrar información, manipulación del DOM y validaciones.
-
-        Bootstrap + jQuery Plugins: Inclusión de al menos un carrusel, acordeón o modal.
-
-    3. Uso de Git y GitHub
-
-        Inicializar el repositorio con git init.
-
-        Realizar mínimo 5 commits con mensajes descriptivos.
-
-        Configurar .gitignore para excluir archivos innecesarios.
-
-        Publicar el código en GitHub y compartir el enlace.
-
-        Documentar el proyecto en README.md, explicando su estructura y funcionalidad.
+ **HTML5**  Estructura semántica 
+ **CSS3**  Estilos personalizados y animaciones 
+ **Bootstrap 5**  Diseño responsivo, navbar, carrusel, modal 
+ **JavaScript**  Lógica del test y validación 
+ **jQuery**  Manipulación del DOM, efectos en tarjetas y modal 
+ **Git & GitHub**  Control de versiones y publicación 
