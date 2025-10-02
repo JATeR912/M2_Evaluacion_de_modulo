@@ -169,62 +169,45 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Prueba tus conocimientos</h5>
+            <h4 class="modal-title">Prueba tus conocimientos</h4>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form>
-              <!-- Pregunta de ejemplo -->
-              <div class="mb-3">
-                <label class="form-label fw-bold">1 - ¿Qué es un antivirus?</label>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="pais_pequeno" id="vaticano" value="vaticano" required>
-                  <label class="form-check-label" for="vaticano">
-                    Un software que protege contra programas maliciosos.
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="pais_pequeno" id="sanmarino" value="sanmarino">
-                  <label class="form-check-label" for="sanmarino">
-                    Una herramienta que hace que el internet sea más rápido.
-                  </label>
-                </div>
-              </div>
-              <div class="mb-3">
-                <label class="form-label fw-bold">2 - ¿Qué es el phishing?</label>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="continente" id="asia" value="asia" required>
-                  <label class="form-check-label" for="asia">
-                    Un intento de engañar a las personas para que revelen información personal.
-                  </label>                
-                </div> 
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="continente" id="europa" value="europa">
-                  <label class="form-check-label" for="europa">
-                    Una forma de buscar información en internet.
-                  </label>
-                </div>             
-              </div>
-              <div class="mb-3">
-                <label class="form-label fw-bold">3 - ¿Qué es la autenticación de dos factores (2FA)?</label>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="lenguaje_programacion" id="python" value="python" required>
-                  <label class="form-check-label" for="python">
-                    Un lenguaje de programación utilizado para crear aplicaciones web.
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="lenguaje_programacion" id="java" value="java">
-                  <label class="form-check-label" for="java">
-                    Un método de seguridad que requiere dos formas de verificación.
-                  </label>
-                </div>
-              </div>
-            </form>
+              <seccion id ="quiz_1">
+                <h5>¿Qué es un antivirus?</h5>
+                <label>
+                  <input type="radio" name="quiz_1" value="software" required> Un software que protege contra programas maliciosos.
+                </label>
+                <label>
+                  <input type="radio" name="quiz_1" value="herramienta"> Una herramienta que hace que el internet sea más rápido.
+                </label>
+              </seccion>
+              <hr>
+              <seccion id ="quiz_2">
+                <h5>¿Qué es el phishing?</h5>
+                <label>
+                  <input type="radio" name="quiz_2" value="revelen" required> Un intento de engañar a las personas para que revelen información personal.
+                </label>
+                <label>
+                  <input type="radio" name="quiz_2" value="buscar"> Una forma de buscar información en internet.
+                </label>
+              </seccion>
+              <hr>
+              <seccion id ="quiz_3">
+                <h5>¿Qué es la autenticación de dos factores (2FA)?</h5>
+                <label>
+                  <input type="radio" name="quiz_3" value="crear" required> Un lenguaje de programación utilizado para crear aplicaciones web.
+                </label>
+                <label>
+                  <input type="radio" name="quiz_3" value="formas"> Un método de seguridad que requiere dos formas de verificación.
+                </label>
+              </seccion>
+          </div>
+          <div class="modal-body-answer">
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-success">Enviar respuestas</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close_modal_btn">Cerrar</button>
+            <button type="button" class="btn btn-success" id="check_modal_btn">Enviar respuestas</button>
           </div>
         </div>
       </div>
@@ -233,58 +216,90 @@
         <p class="text-center">Proyecto bootcamp Ciber Seguridad JATeR &copy; 2025</p>
     </footer>
     <script>
+        // Efecto de volteo en las tarjetas
         const flipCards = document.querySelectorAll('.flip-card');
         flipCards.forEach(card => {
           card.addEventListener('click', () => {
             card.classList.toggle('flipped');
           });
         });
-   
-      document.querySelector('.btn-success').addEventListener('click', function() {
-        // Respuestas correctas
-        const correctAnswers = {
-          pais_pequeno: 'vaticano', // Pregunta 1
-          continente: 'asia',       // Pregunta 2
-          lenguaje_programacion: 'java' // Pregunta 3
-        };
+        // Variables del modal
+        const modal = document.getElementById('modal');
+        const check_modal_btn = document.getElementById('check_modal_btn');
+        const close_modal_btn = document.getElementById('close_modal_btn');
+        const modal_body_answer = document.querySelector('.modal-body-answer');
+        const modal_body = document.querySelector('.modal-body');
+        // Manejar el evento de clic en el botón "Enviar respuestas"
+        check_modal_btn.addEventListener('click', () => {
+          // Respuestas correctas y constantes para calcular el puntaje
+          let score = 0;
+          const totalQuestions = 3;
+          const answers = {
+            quiz_1: 'software',
+            quiz_2: 'revelen',
+            quiz_3: 'formas'
+          };
 
-        let score = 0;
-        let feedback = '';
-
-        // Limpia resultados previos
-        const modalBody = document.querySelector('#modal .modal-body');
-        const oldResult = modalBody.querySelector('.alert');
-        if (oldResult) oldResult.remove();
-
-        // Verifica cada pregunta
-        Object.keys(correctAnswers).forEach(function(name, idx) {
-          const selected = document.querySelector(`input[name="${name}"]:checked`);
-          if (selected) {
-            if (selected.value === correctAnswers[name]) {
-              score++;
-              feedback += `<li>Pregunta ${idx+1}: <span class="text-success">Respuesta correcta</span></li>`;
-            } else {
-              feedback += `<li>Pregunta ${idx+1}: <span class="text-danger">Incorrecta</span>. Respuesta correcta: <b>${getAnswerText(name, correctAnswers[name])}</b></li>`;
+          // Validar que todas las preguntas estén contestadas
+          let allAnswered = true;
+          for (let i = 1; i <= totalQuestions; i++) {
+            const selected = document.querySelector(`input[name="quiz_${i}"]:checked`);
+            if (!selected) {
+              allAnswered = false;
+              break;
             }
-          } else {
-            feedback += `<li>Pregunta ${idx+1}: <span class="text-warning">Sin responder</span>. Respuesta correcta: <b>${getAnswerText(name, correctAnswers[name])}</b></li>`;
           }
+          if (!allAnswered) {
+            alert('Por favor responde todas las preguntas antes de enviar.');
+            return;
+          }
+
+          // Calcular el puntaje
+          for (let i = 1; i <= totalQuestions; i++) {
+            const selected = document.querySelector(`input[name="quiz_${i}"]:checked`);
+            if (selected && selected.value === answers[`quiz_${i}`]) {
+              score++;
+            }
+          }
+
+          // Mensaje personalizado según el puntaje
+          let customMessage = '';
+          if (score === 3) {
+            customMessage = 'Tuviste 3 respuestas correctas, ¡Excelente! Todas tus respuestas son correctas.';
+          } else if (score === 2) {
+            customMessage = 'Tuviste 2 respuestas correctas, ¡Muy bien! Solo te faltó una respuesta correcta.';
+          } else if (score === 1) {
+            customMessage = 'Tuviste 1 respuesta correcta, ¡Bien! Has acertado una respuesta, sigue practicando.';
+          } else {
+            customMessage = 'No acertaste ninguna respuesta, Presiona cerrar y ¡intenta de nuevo!';
+          }
+
+          // Mostrar el mensaje personalizado
+          modal_body.style.display = 'none';
+          modal_body_answer.innerHTML = `
+            <p class="text-center fw-bold">${customMessage}</p>
+          `;
+          check_modal_btn.style.display = 'none';
+          close_modal_btn.textContent = 'Cerrar';
+          close_modal_btn.addEventListener('click', () => {
+            modal.style.display = 'none';
+            modal_body_answer.innerHTML = '';
+            check_modal_btn.style.display = 'inline-block';
+            modal_body.style.display = 'block';
+          });
         });
 
-        // Muestra el resultado en el modal
-        modalBody.innerHTML += `
-          <div class="alert alert-info mt-3">
-            <b>Respuestas correctas: ${score} de 3</b>
-            <ul>${feedback}</ul>
-          </div>
-        `;
-      });
-
-      // Función para obtener el texto de la respuesta correcta
-      function getAnswerText(name, value) {
-        const label = document.querySelector(`input[name="${name}"][value="${value}"]`).nextElementSibling;
-        return label ? label.textContent : '';
-      }
+        // Limpiar radios al cerrar el modal
+        const modalElement = document.getElementById('modal');
+        modalElement.addEventListener('hidden.bs.modal', () => {
+          document.querySelectorAll('.modal-body input[type="radio"]').forEach(input => {
+            input.checked = false;
+          });
+          // Restaurar la vista original del modal
+          document.querySelector('.modal-body-answer').innerHTML = '';
+          document.getElementById('check_modal_btn').style.display = 'inline-block';
+          document.querySelector('.modal-body').style.display = 'block';
+        });
     </script>
   </body>
 </html>
