@@ -20,6 +20,32 @@ body {
   margin: auto;
   overflow: hidden;
 }
+#carousel_amenazas img {
+  height: 210px;
+  object-fit: cover;
+}
+
+/* Aumenta la altura de la imagen si el ancho de pantalla es menor a 847px */
+@media (max-width: 847px) {
+  #carousel_amenazas img {
+    height: 250px;
+  }
+}
+@media (max-width: 600px) {
+  #carousel_amenazas img {
+    height: 300px;
+  }
+}
+@media (max-width: 400px) {
+  #carousel_amenazas img {
+    height: 350px;
+  }
+}
+@media (max-width: 300px) {
+  #carousel_amenazas img {
+    height: 370px;
+  }
+}
 .cerrar {
       position: absolute;
       right: 7px;
